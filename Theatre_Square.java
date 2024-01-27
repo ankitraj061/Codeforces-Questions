@@ -1,4 +1,4 @@
-import java.math.BigInteger;
+
 import java.util.Scanner;
 
 public class Theatre_Square {
@@ -7,18 +7,22 @@ public class Theatre_Square {
         int n = sc.nextInt();
         int m = sc.nextInt();
         int a = sc.nextInt();
-        int sum_n = 0;
-        int sum_m = 0;
-        for (int i = 0; i < n; i += a) {
-            sum_n++;
+
+        long count = 0;
+        long count2 = 0;
+        if (n % a == 0) {
+            count = n / a;
+
+        } else if (n % a != 0) {
+            count = n / a + 1;
+        }
+        if (m % a == 0) {
+            count2 = m / a;
+        } else if (m % a != 0) {
+            count2 = m / a + 1;
 
         }
-        for (int i = 0; i < m; i += a) {
-            sum_m++;
+        System.out.println(count * count2);
 
-        }
-        
-        BigInteger bigNumber = new BigInteger("12345678901234567890");
-        System.out.println();
     }
 }

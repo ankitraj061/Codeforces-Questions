@@ -2,29 +2,22 @@
 #include <stdio.h>
 
 int main()
+
 {
 
-    int n;
+    char ch;
 
-    char arr[100000] = {'a', 'b', 'c', 'd'};
+    FILE *fp;
 
-    scanf("%d", &n);
+    fp = fopen("datafile.txt", "w");
 
-    int i = 0;
+    while ((ch = fgetc(fp)) != EOF)
 
-    while (n--)
-    {
+        printf("%c", ch);
 
-        if (i >= 4)
-        {
+    printf("End of file!\nn");
 
-            i = i % 4;
-        }
-
-        printf("%c", arr[i]);
-
-        i++;
-    }
+    fclose(fp);
 
     return 0;
 }
