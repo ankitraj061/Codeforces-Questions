@@ -5,20 +5,16 @@ public class Even_Odds {
         Scanner sc = new Scanner(System.in);
         long n = sc.nextLong();
         long k = sc.nextLong();
-        long count = 0;
-        for (long i = 1; i <= n; i += 2) {
-            count++;
-            if (count == k) {
-                System.out.println(i);
-                break;
-            }
-        }
-        for (long i = 2; i <= n; i += 2) {
-            count++;
-            if (count == k) {
-                System.out.println(i);
-                break;
-            }
+
+        if ((n / 2 >= k && n % 2 == 0) || (n % 2 == 1 && (n / 2) + 1 >= k)) {
+            System.out.println(2 * k - 1);
+        } else {
+            if (n % 2 == 0)
+                k = k - n / 2;
+            else
+                k = k - (n / 2) - 1;
+            // System.out.println(k);
+            System.out.println(2 * k);
         }
 
     }
