@@ -15,9 +15,7 @@ public class Prime_Factorisation {
                 for (int j = 2 * i; j < n; j += i) {
                     if (arr[j] == 1) {
                         arr[j] = i;
-
                     }
-
                 }
             }
 

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Prime_factors_btw {
+public class CountPrime {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -12,18 +12,16 @@ public class Prime_factors_btw {
         }
         for (int i = 2; i <= Math.sqrt(m); i++) {
             if (arr[i] == 1) {
-                for (int j = i * i; j < m; j += i) {
+                for (int j = i * i; j < m + 1; j += i) {
                     if (arr[j] == 1) {
                         arr[j] = i;
-
                     }
-
                 }
             }
 
         }
         int count = 0;
-        for (int i = 2; i < m; i++) {
+        for (int i = 2; i < m + 1; i++) {
             if (arr[i] == 1)
                 count++;
         }
